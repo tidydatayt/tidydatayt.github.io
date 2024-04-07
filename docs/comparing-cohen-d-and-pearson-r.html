@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>9 Comparing Cohen d and Pearson r | A Minimal Book Example</title>
+<meta name="author" content="John Doe">
+<meta name="description" content="9.1 Effect size - Cohen’s  Cohen is used to quantify the size of the difference between two groups, taking into account the variability within each group. \[d = \frac{m_2...">
+<meta name="generator" content="bookdown 0.38 with bs4_book()">
+<meta property="og:title" content="9 Comparing Cohen d and Pearson r | A Minimal Book Example">
+<meta property="og:type" content="book">
+<meta property="og:description" content="9.1 Effect size - Cohen’s  Cohen is used to quantify the size of the difference between two groups, taking into account the variability within each group. \[d = \frac{m_2...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="9 Comparing Cohen d and Pearson r | A Minimal Book Example">
+<meta name="twitter:description" content="9.1 Effect size - Cohen’s  Cohen is used to quantify the size of the difference between two groups, taking into account the variability within each group. \[d = \frac{m_2...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">A Minimal Book Example</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="hello-bookdown.html"><span class="header-section-number">2</span> Hello bookdown</a></li>
+<li><a class="" href="cross.html"><span class="header-section-number">3</span> Cross-references</a></li>
+<li><a class="" href="parts.html"><span class="header-section-number">4</span> Parts</a></li>
+<li><a class="" href="footnotes-and-citations.html"><span class="header-section-number">5</span> Footnotes and citations</a></li>
+<li><a class="" href="blocks.html"><span class="header-section-number">6</span> Blocks</a></li>
+<li><a class="" href="sharing-your-book.html"><span class="header-section-number">7</span> Sharing your book</a></li>
+<li><a class="" href="references.html">References</a></li>
+<li><a class="" href="alpha-and-beta-in-hypothesis-testing.html"><span class="header-section-number">8</span> Alpha and Beta in Hypothesis Testing</a></li>
+<li><a class="active" href="comparing-cohen-d-and-pearson-r.html"><span class="header-section-number">9</span> Comparing Cohen d and Pearson r</a></li>
+<li><a class="" href="comparing-cohen-d-and-pearson-r-1.html"><span class="header-section-number">10</span> Comparing Cohen d and Pearson r</a></li>
+<li><a class="" href="q1-what-is-the-use-case-of-effect-size.html"><span class="header-section-number">11</span> Q1: What is the use case of effect size?</a></li>
+<li><a class="" href="q2-for-effect-size-any-difference-between-correlation-and-linear-regression.html"><span class="header-section-number">12</span> Q2: For effect size, any difference between correlation and linear regression?</a></li>
+<li><a class="" href="q3-why-is-different-from.html"><span class="header-section-number">13</span> Q3: Why is  different from ?</a></li>
+<li><a class="" href="references-2.html"><span class="header-section-number">14</span> References</a></li>
+<li><a class="" href="how-effect-size-impact-sample-size.html"><span class="header-section-number">15</span> How Effect Size Impact Sample Size</a></li>
+<li><a class="" href="effect-size-sample-size-and-statistical-power.html"><span class="header-section-number">16</span> Effect Size, Sample Size, and Statistical Power</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="comparing-cohen-d-and-pearson-r" class="section level1" number="9">
+<h1>
+<span class="header-section-number">9</span> Comparing Cohen d and Pearson r<a class="anchor" aria-label="anchor" href="#comparing-cohen-d-and-pearson-r"><i class="fas fa-link"></i></a>
+</h1>
+<div id="effect-size---cohens" class="section level2" number="9.1">
+<h2>
+<span class="header-section-number">9.1</span> Effect size - Cohen’s <a class="anchor" aria-label="anchor" href="#effect-size---cohens"><i class="fas fa-link"></i></a>
+</h2>
+<p>Cohen  is used to quantify the size of the difference between two groups, taking into account the variability within each group.</p>
+<p><span class="math display">\[d = \frac{m_2 -m_1}{s_{pooled}}=\frac{m_2 -m_1}{\sqrt{\frac{s_1^2+s_2^2}{2}}}\]</span></p>
+<p><span class="math inline">\(s_1\)</span> is the sample standard deviation for group 1, whereas <span class="math inline">\(s_2\)</span> is the sample standard deviation for group 2.</p>
+</div>
+<div id="effect-size---pearson-product-moment" class="section level2" number="9.2">
+<h2>
+<span class="header-section-number">9.2</span> Effect Size - Pearson Product Moment <a class="anchor" aria-label="anchor" href="#effect-size---pearson-product-moment"><i class="fas fa-link"></i></a>
+</h2>
+<p>The Pearson product-moment correlation coefficient, often referred to as the Pearson correlation coefficient, quantifies the strength of a linear relationship between two variables.</p>
+<p><span class="math display">\[r_{xy} =\frac{cov(x,y)}{s_xs_y}=\frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum_{i=1}^n (x_i-\bar{x})^2}\sqrt{\sum_{i=1}^n (y_i-\bar{y})^2}}\]</span></p>
+</div>
+<div id="cohens-and-pearsons" class="section level2" number="9.3">
+<h2>
+<span class="header-section-number">9.3</span> Cohen’s  and Pearson’s <a class="anchor" aria-label="anchor" href="#cohens-and-pearsons"><i class="fas fa-link"></i></a>
+</h2>
+<p>The following effect size numbers are based on Jacob Cohen. ()</p>
+<div id="comments" class="section level3" number="9.3.1">
+<h3>
+<span class="header-section-number">9.3.1</span> Comments<a class="anchor" aria-label="anchor" href="#comments"><i class="fas fa-link"></i></a>
+</h3>
+<p>Cohen’s  can assume values ranging from 0 to infinity (i.e., can be greater than 1), whereas Pearson’s  is confined to a range between -1 and 1.</p>
+<p>Note that, based on my best understanding (not sure), Cohen’s  can be negative as well, depending on how to define <span class="math inline">\(m_1\)</span> and <span class="math inline">\(m_2\)</span> and which order to put them.</p>
+</div>
+<div id="convert-to-and-vice-versa" class="section level3" number="9.3.2">
+<h3>
+<span class="header-section-number">9.3.2</span> Convert  to , and vice versa<a class="anchor" aria-label="anchor" href="#convert-to-and-vice-versa"><i class="fas fa-link"></i></a>
+</h3>
+<p>While Cohen’s  looks different from Pearson’s , there is internal connection between these two.</p>
+<p>Group 1 and group 2 may be considered to be a dichotomy or a two point scale.</p>
+<p>Thus, you can convert  to , and vice versa.</p>
+</div>
+<div id="convert-to" class="section level3" number="9.3.3">
+<h3>
+<span class="header-section-number">9.3.3</span> Convert  to <a class="anchor" aria-label="anchor" href="#convert-to"><i class="fas fa-link"></i></a>
+</h3>
+<p><span class="math display">\[d=\frac{2r}{\sqrt{1-r^2}}\]</span></p>
+</div>
+<div id="convert-to-1" class="section level3" number="9.3.4">
+<h3>
+<span class="header-section-number">9.3.4</span> Convert  to <a class="anchor" aria-label="anchor" href="#convert-to-1"><i class="fas fa-link"></i></a>
+</h3>
+<p><span class="math display">\[d^2=\frac{4r^2}{1-r^2}\]</span></p>
+<p><span class="math display">\[d^2=4r^2+r^2d^2=r^2(4+d^2)\]</span>
+<span class="math display">\[r^2=\frac{d^2}{4+d^2}\]</span>
+<span class="math display">\[r=\frac{d}{\sqrt{4+d^2}}\]</span></p>
+<p>According to Cohen, sometimes, people might want to think of effect sizes for mean differences  in terms of . Thus, you can convert  to  if needed.</p>
+<p>For instance, group 1 and group 2 are two experimental manipulations. The effect size typically is . But you can convert it into .</p>
+<p>I will provide data to demonstrate the connection between  and .</p>
+</div>
+</div>
+<div id="simulate-both-x-and-y-that-are-numerical" class="section level2" number="9.4">
+<h2>
+<span class="header-section-number">9.4</span> Simulate both X and Y that are numerical<a class="anchor" aria-label="anchor" href="#simulate-both-x-and-y-that-are-numerical"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># set the seed for reproducibility</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># specify marginal means and standard deviations</span></span>
+<span><span class="va">mean_x</span> <span class="op">&lt;-</span> <span class="fl">5</span></span>
+<span><span class="va">mean_y</span> <span class="op">&lt;-</span> <span class="fl">6</span></span>
+<span><span class="va">sd_x</span> <span class="op">&lt;-</span> <span class="fl">12</span></span>
+<span><span class="va">sd_y</span><span class="op">&lt;-</span> <span class="fl">14</span></span>
+<span></span>
+<span><span class="co">## specify coefficient, which must be between -1 and 1</span></span>
+<span><span class="va">corcoef</span> <span class="op">&lt;-</span> <span class="fl">0.5</span></span>
+<span></span>
+<span><span class="co">## covariance between two variables</span></span>
+<span><span class="va">covariance</span> <span class="op">&lt;-</span> <span class="va">corcoef</span> <span class="op">*</span> <span class="va">sd_x</span> <span class="op">*</span> <span class="va">sd_y</span></span>
+<span></span>
+<span><span class="co">## variance-covariance matrix</span></span>
+<span><span class="va">sigma</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">sd_x</span><span class="op">^</span><span class="fl">2</span>, <span class="va">covariance</span>, <span class="va">covariance</span>, <span class="va">sd_y</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span>, nrow <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">xy</span> <span class="op">&lt;-</span> <span class="fu">MASS</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/MASS/man/mvrnorm.html">mvrnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">50</span>, mu <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">mean_x</span>, <span class="va">mean_y</span><span class="op">)</span>, Sigma <span class="op">=</span> <span class="va">sigma</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">xy</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"x"</span>, <span class="st">"y"</span><span class="op">)</span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">xy</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##           x          y
+## 1 -2.188776  0.1167428
+## 2  3.014416  2.8711033
+## 3 20.168055 25.9184510
+## 4 -4.307292 14.2689957
+## 5  7.878421  6.4575243
+## 6 10.288163 36.3225845</code></pre>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># plot it</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">x</span>,data<span class="op">=</span><span class="va">df</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672"></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">x</span>,<span class="va">df</span><span class="op">$</span><span class="va">y</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+##  Pearson's product-moment correlation
+## 
+## data:  df$x and df$y
+## t = 4.2497, df = 48, p-value = 9.8e-05
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.2861663 0.6994209
+## sample estimates:
+##       cor 
+## 0.5228658</code></pre>
+</div>
+<div id="vs.-difference-and-connection" class="section level2" number="9.5">
+<h2>
+<span class="header-section-number">9.5</span>  vs. : Difference and Connection<a class="anchor" aria-label="anchor" href="#vs.-difference-and-connection"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># dichotomize x</span></span>
+<span><span class="va">df</span><span class="op">$</span><span class="va">dichotomized_x</span><span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">x</span> <span class="op">&gt;</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">x</span><span class="op">)</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##           x          y dichotomized_x
+## 1 -2.188776  0.1167428              0
+## 2  3.014416  2.8711033              0
+## 3 20.168055 25.9184510              1
+## 4 -4.307292 14.2689957              0
+## 5  7.878421  6.4575243              1
+## 6 10.288163 36.3225845              1</code></pre>
+</div>
+<div id="method-1-direct-calculating" class="section level2" number="9.6">
+<h2>
+<span class="header-section-number">9.6</span> Method 1: Direct Calculating <a class="anchor" aria-label="anchor" href="#method-1-direct-calculating"><i class="fas fa-link"></i></a>
+</h2>
+<p>Since we got a column of dichotomized x, we can actually use the formula mentioned to calculate Cohen’s . That is, calculate the means for groups 1 and 2. Then, calculate the sample standard deviations.</p>
+<p><span class="math display">\[d = \frac{m_2 -m_1}{s_{pooled}}=\frac{m_2 -m_1}{\sqrt{\frac{s_1^2+s_2^2}{2}}}\]</span></p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># calculate group means</span></span>
+<span><span class="va">means</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/aggregate.html">aggregate</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">dichotomized_x</span><span class="op">)</span>, FUN<span class="op">=</span><span class="va">mean</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="co"># calculate sample standard deviation - pooled </span></span>
+<span><span class="va">variances</span><span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aggregate.html">aggregate</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">dichotomized_x</span><span class="op">)</span>,FUN<span class="op">=</span><span class="va">var</span><span class="op">)</span></span>
+<span><span class="va">s_pooled</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="op">(</span><span class="va">variances</span><span class="op">$</span><span class="va">x</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">+</span><span class="va">variances</span><span class="op">$</span><span class="va">x</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">d_calculated</span><span class="op">&lt;-</span><span class="op">(</span><span class="va">means</span><span class="op">$</span><span class="va">x</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">-</span><span class="va">means</span><span class="op">$</span><span class="va">x</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span><span class="op">/</span><span class="va">s_pooled</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">d_calculated</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 1.252203</code></pre>
+</div>
+<div id="method-2-converting-to" class="section level2" number="9.7">
+<h2>
+<span class="header-section-number">9.7</span> Method 2: Converting  to <a class="anchor" aria-label="anchor" href="#method-2-converting-to"><i class="fas fa-link"></i></a>
+</h2>
+<p><span class="math display">\[d=\frac{2r}{\sqrt{1-r^2}}\]</span></p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># check the correlation coefficient</span></span>
+<span><span class="va">cor_result</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">x</span>,<span class="va">df</span><span class="op">$</span><span class="va">y</span><span class="op">)</span></span>
+<span><span class="va">correlation_coefficient</span><span class="op">&lt;-</span><span class="va">cor_result</span><span class="op">$</span><span class="va">estimate</span></span>
+<span><span class="va">d_converted</span><span class="op">&lt;-</span><span class="fl">2</span><span class="op">*</span><span class="va">correlation_coefficient</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">correlation_coefficient</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">d_converted</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##      cor 
+## 1.226787</code></pre>
+</div>
+<div id="references-1" class="section level2" number="9.8">
+<h2>
+<span class="header-section-number">9.8</span> References<a class="anchor" aria-label="anchor" href="#references-1"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li><p>Jacob Cohen, 1988, Statistical Power Analysis for the Behavioral Sciences, Second Edition</p></li>
+<li><p>What is the relation between the effect size and correlation?</p></li>
+</ol>
+<p><a href="https://stats.stackexchange.com/questions/412590/what-is-the-relation-between-the-effect-size-and-correlation" class="uri">https://stats.stackexchange.com/questions/412590/what-is-the-relation-between-the-effect-size-and-correlation</a></p>
+<ol start="3" style="list-style-type: decimal">
+<li>What is Effect Size and Why Does It Matter? (Examples)</li>
+</ol>
+<p><a href="https://www.scribbr.com/statistics/effect-size/" class="uri">https://www.scribbr.com/statistics/effect-size/</a></p>
+<ol start="4" style="list-style-type: decimal">
+<li>How to simulate a strong correlation of data with R</li>
+</ol>
+<p><a href="https://stackoverflow.com/questions/72894192/how-to-simulate-a-strong-correlation-of-data-with-r" class="uri">https://stackoverflow.com/questions/72894192/how-to-simulate-a-strong-correlation-of-data-with-r</a></p>
+<ol start="5" style="list-style-type: decimal">
+<li>FAQ How is effect size used in power analysis?</li>
+</ol>
+<p><a href="https://stats.oarc.ucla.edu/other/mult-pkg/faq/general/effect-size-power/faqhow-is-effect-size-used-in-power-analysis/" class="uri">https://stats.oarc.ucla.edu/other/mult-pkg/faq/general/effect-size-power/faqhow-is-effect-size-used-in-power-analysis/</a></p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="alpha-and-beta-in-hypothesis-testing.html"><span class="header-section-number">8</span> Alpha and Beta in Hypothesis Testing</a></div>
+<div class="next"><a href="comparing-cohen-d-and-pearson-r-1.html"><span class="header-section-number">10</span> Comparing Cohen d and Pearson r</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#comparing-cohen-d-and-pearson-r"><span class="header-section-number">9</span> Comparing Cohen d and Pearson r</a></li>
+<li><a class="nav-link" href="#effect-size---cohens"><span class="header-section-number">9.1</span> Effect size - Cohen’s </a></li>
+<li><a class="nav-link" href="#effect-size---pearson-product-moment"><span class="header-section-number">9.2</span> Effect Size - Pearson Product Moment </a></li>
+<li>
+<a class="nav-link" href="#cohens-and-pearsons"><span class="header-section-number">9.3</span> Cohen’s  and Pearson’s </a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#comments"><span class="header-section-number">9.3.1</span> Comments</a></li>
+<li><a class="nav-link" href="#convert-to-and-vice-versa"><span class="header-section-number">9.3.2</span> Convert  to , and vice versa</a></li>
+<li><a class="nav-link" href="#convert-to"><span class="header-section-number">9.3.3</span> Convert  to </a></li>
+<li><a class="nav-link" href="#convert-to-1"><span class="header-section-number">9.3.4</span> Convert  to </a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#simulate-both-x-and-y-that-are-numerical"><span class="header-section-number">9.4</span> Simulate both X and Y that are numerical</a></li>
+<li><a class="nav-link" href="#vs.-difference-and-connection"><span class="header-section-number">9.5</span>  vs. : Difference and Connection</a></li>
+<li><a class="nav-link" href="#method-1-direct-calculating"><span class="header-section-number">9.6</span> Method 1: Direct Calculating </a></li>
+<li><a class="nav-link" href="#method-2-converting-to"><span class="header-section-number">9.7</span> Method 2: Converting  to </a></li>
+<li><a class="nav-link" href="#references-1"><span class="header-section-number">9.8</span> References</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/09-Comparing_Cohen_d_and_Pearson_r.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/09-Comparing_Cohen_d_and_Pearson_r.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2024-04-07.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
